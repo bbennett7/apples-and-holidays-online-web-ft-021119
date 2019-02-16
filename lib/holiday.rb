@@ -57,6 +57,7 @@ def all_supplies_in_holidays(holiday_hash)
       if holiday.to_s.include?("_")
         holiday_split = holiday.to_s.split("_")
         holiday_caps = holiday_split.each{|word| word.capitalize}
+        binding.pry
         holiday_name = holiday_caps.join(" ")
         puts "  #{holiday_name}: #{items_array.join(",")}"
       else

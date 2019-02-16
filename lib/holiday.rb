@@ -56,7 +56,9 @@ def all_supplies_in_holidays(holiday_hash)
     holiday_and_decorations.each do |holiday, items_array|
       if holiday.to_s.include?("_")
         holiday_split = holiday.split("_")
-        holiday_caps = holiday_split
+        holiday_caps = holiday_split.each{|word| word.capitalize}
+        holiday_name = holiday_caps.join(" ")
+        puts "  #{holiday_name}: #{items_array.join(",")}"
       else
         puts "  #{holiday.capitalize}: #{items_array.join(", ")}"
       end
